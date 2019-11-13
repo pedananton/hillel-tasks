@@ -1,0 +1,20 @@
+* {
+  font-family: monospace;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] {
+  -webkit-appearance: none;
+     -moz-appearance: textfield;
+  width: 5ch;
+}
+
+.highlight {
+  background: #eee;
+  padding: 0.5em;
+}
