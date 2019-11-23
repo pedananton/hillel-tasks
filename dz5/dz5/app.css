@@ -1,0 +1,22 @@
+:root {
+    font: 16px/1.5 monospace;
+  }
+  
+  input,
+  select {
+    font: inherit;
+    padding: .25em;
+  }
+  
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+  }
+  
+  input[type=number] {
+    -webkit-appearance: none;
+       -moz-appearance: textfield;
+    width: 5ch;
+  }
+  

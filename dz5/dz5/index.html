@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  <title>Homework 5: Math[prop] explorer</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <h1>Math[prop] explorer</h1>
+
+  <code>Math.</code>
+  <select id="selectProp" onchange="calc.result()">
+    <option selected disabled hidden value>--select a value---</option>
+    <option>E</option>
+    <option>LN10</option>
+    <option>LN2</option>
+    <option>LOG10E</option>
+    <option>LOG2E</option>
+    <option>PI</option>
+    <option>SQRT1_2</option>
+    <option>SQRT2</option>
+    <option>abs</option>
+    <option>acos</option>
+    <option>acosh</option>
+    <option>asin</option>
+    <option>asinh</option>
+    <option>atan</option>
+    <option>atan2</option>
+    <option>atanh</option>
+    <option>cbrt</option>
+    <option>ceil</option>
+    <option>clz32</option>
+    <option>cos</option>
+    <option>cosh</option>
+    <option>exp</option>
+    <option>expm1</option>
+    <option>floor</option>
+    <option>fround</option>
+    <option>hypot</option>
+    <option>imul</option>
+    <option>log</option>
+    <option>log10</option>
+    <option>log1p</option>
+    <option>log2</option>
+    <option>max</option>
+    <option>min</option>
+    <option>pow</option>
+    <option>random</option>
+    <option>round</option>
+    <option>sign</option>
+    <option>sin</option>
+    <option>sinh</option>
+    <option>sqrt</option>
+    <option>tan</option>
+    <option>tanh</option>
+    <option>trunc</option>
+  </select>
+
+  <code id="leftBracket" hidden>(</code>
+  <input id="input1" type="number" placeholder="1" oninput="" hidden>
+  <code id="comma" hidden>,</code>
+  <input id="input2" type="number" placeholder="1" oninput="" hidden>
+  <code id="rightBracket" hidden>)</code>
+  <code>=</code>
+  <input id="inputResult" readonly>
+  <script src="app.js"></script>
+</body>
+</html>
