@@ -7,7 +7,6 @@ function times(x, callback) {
       arr = Array.from({ length: x }, (v, k) => k);
     }
   }
-  console.log(arr)
 }
 times();
 times(5);
