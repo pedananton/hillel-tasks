@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="app.css" />
+  <script type="module" async src="app.js"></script>
+  <title>Homework 3</title>
+</head>
+<body>
+<table id="viewer">
+  <thead>
+  <tr>
+    <th data-prop="e.empId" data-type="number">#</th>
+    <th data-prop="e.namePrefix" data-type="string">Prefix</th>
+    <th data-prop="e.firstName + ' ' + e.lastName" data-type="string">Name</th>
+    <th data-prop="e.eMail" data-type="string">E-mail</th>
+    <th data-prop="e.dateOfBirth" data-type="date">Birthday</th>
+  </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<template id="employee">
+  <tr>
+    <td><!-- # --></td>
+    <td><!-- Prefix --></td>
+    <td><!-- Name --></td>
+    <td><a href="mailto:"></a></td>
+    <td><!-- Birthday --></td>
+  </tr>
+</template>
+
+</body>
+</html>
