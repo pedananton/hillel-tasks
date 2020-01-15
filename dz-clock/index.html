@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Clock</title>
+    <link rel="stylesheet" href="css/photon.css">
+    <link rel="stylesheet" href="css/clock.css">
+    <script async type="module" src="js/clock.js"></script>
+  </head>
+  <body>
+    <div class="window window-inline" style="width: 500px; height: 500px;">
+      <header class="toolbar toolbar-header">
+        <h1 class="title">Clock</h1>
+        <div class="toolbar-actions text-center">
+            <div class="btn-group">
+              <label class="form-label">
+                Custom time:
+                <input type="text" class="form-control form-control-inline" placeholder="11:22:33">
+              </label>
+            </div>
+            <div class="btn-group">
+              <button class="btn btn-default">
+                <span class="icon icon-play"></span>
+              </button>
+              <button class="btn btn-default">
+                <span class="icon icon-stop"></span>
+              </button>
+            </div>
+          </div>
+      </header>
+
+      <div class="window-content">
+        <div class="pane flex-centered" style="background: #f5f5f4">
+          <div class="clock clock_default">
+            <span class="clock__hour"></span>
+            <span class="clock__minute"></span>
+            <span class="clock__second"></span>
+            <span class="clock__dot"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
