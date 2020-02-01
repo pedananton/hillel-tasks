@@ -1,0 +1,22 @@
+{
+  "name": "unit-tests-demo",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint src",
+    "start": "node --experimental-modules app.js",
+    "pretest": "npm run lint",
+    "test": "jest --coverage",
+    "prepare": "npm test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.8.4",
+    "eslint": "^6.8.0",
+    "jest": "^25.1.0"
+  }
+}
