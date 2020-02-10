@@ -1,6 +1,7 @@
 'use strict';
 
-import loadScript from "./utils/loadScript.js";
+//import loadScript from "./utils/loadScript.js";
+import loadScriptWithPromise from "./utils/loadScript.js";
 
 const elements = {
     runCode: document.getElementById('runCode'),
@@ -21,24 +22,43 @@ elements.scriptLoader.addEventListener('click', (e) => {
     if (!e.target.matches('button[data-src]')) {
         return;
     }
-
     const button = e.target;
-    loadScript(button.dataset.src, function (err) {
-        if (err) {
-            throw err;
-        }
 
-        button.disabled = true;
-    })
+  /*  loadScript(button.dataset.src)
+         .then(() => {
+             button.disabled = true;
+         })
+         .catch(err)
+             , function (err) {
+         if (err) {
+             throw err;
+         }    
+   }
+         })*/ 
+        let loadScript = new Promise(function(res, rej){
+            res(button.dataset.src);
+            rej((err)=>{throw err})
+        });
+        loadScript.then(() => {
+            button.disabled = true;
+        })
 });
 
 // TODO: Используйте async/await + Promise.all
+/*
 elements.loadAllScripts.addEventListener('click', (e) => {
     const scriptButtons = elements.scriptLoader.querySelectorAll('button[data-src]');
     const scriptSrcs = [...scriptButtons].map(button => button.dataset.src);
 
     console.log('TODO: script srcs', scriptSrcs);
     alert('NOT IMPLEMENTED')
+})
+*/
+
+elements.loadAllScripts.addEventListener('click', async (e) => {
+    const scriptButtons = elements.scriptLoader.querySelectorAll('button[data-src]');
+        const scriptSrcs = [...scriptButtons].map(button => button.dataset.src);
+        await Promise.all(scriptSrcs.map(loadScriptWithPromise));
 })
 
 window.onerror = function (e, source, line, col, error) {
