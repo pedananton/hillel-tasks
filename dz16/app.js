@@ -1,26 +1,24 @@
-class toDoItem extends HTMLElement {
-    get completed(){
-        return this.hasAttribute("completed");
-    }
-    set completed(val) {
-        if(val) {
-            this.setAttribute("completed", "");
-        } else {
-            this.removeAttribute("completed");
-        }
-    }
+import template from './TodoItem.html.js';
+
+class ToDoItem extends HTMLElement {
+    
     constructor() {
         super();
-        this.addEventListener("click", e=> {
-            if (this.disabled) {
-                return;
+        this.attachShadow({ mode: 'open' });
+        this.shadowRoot.append(template.content.cloneNode(true));
+        var checkBox = this.shadowRoot.querySelector("input");
+
+        checkBox.onchange = () => {
+            this.shadowRoot.children[1].style.textDecoration = "none";
+            if (checkBox.checked == true){
+                this.shadowRoot.children[1].style.textDecoration = "line-through";
+            }else {
+                this.shadowRoot.children[1].style.textDecoration = "none";
             }
-            this.toggeleToDo();
-        });
-    }
-    toggeleToDo() {
-        // ..
+           
+        }
     }
 }
-customElements.define("todo-item", toDoItem)
+
+customElements.define("todo-item", ToDoItem)
 
