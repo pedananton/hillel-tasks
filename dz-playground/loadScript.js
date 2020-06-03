@@ -1,4 +1,5 @@
-export default function loadScript(src, callback) {
+
+export function loadScript(src, callback) {
     const script = document.createElement('script');
     script.src = src;
 
@@ -15,12 +16,16 @@ export default function loadScript(src, callback) {
     document.head.appendChild(script);
 }
 
-// TODO: 1. Полностью перепишите исходную функцию с использованием new Promise
-export function loadScriptWithPromise(src) {
 
+// TODO: 1. Полностью перепишите исходную функцию с использованием new Promise
+export default function loadScriptWithPromise(src) {
+    return new Promise((res, rej)=>{
+    res(loadScript)
+    rej("error")
+ })
 }
 
 // TODO: 2. Используйте исходную функцию, не меняя ее, и промисифицируйте ее
-export function loadScriptPromisified(src) {
+// export function loadScriptPromisified(src) {
 
-}
+// }
